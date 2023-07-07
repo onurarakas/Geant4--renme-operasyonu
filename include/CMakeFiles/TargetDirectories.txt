@@ -1,0 +1,8 @@
+/home/onurkarakas42/SW/G4/example_trashyard/B1/include/CMakeFiles/install/strip.dir
+/home/onurkarakas42/SW/G4/example_trashyard/B1/include/CMakeFiles/install/local.dir
+/home/onurkarakas42/SW/G4/example_trashyard/B1/include/CMakeFiles/install.dir
+/home/onurkarakas42/SW/G4/example_trashyard/B1/include/CMakeFiles/list_install_components.dir
+/home/onurkarakas42/SW/G4/example_trashyard/B1/include/CMakeFiles/rebuild_cache.dir
+/home/onurkarakas42/SW/G4/example_trashyard/B1/include/CMakeFiles/edit_cache.dir
+/home/onurkarakas42/SW/G4/example_trashyard/B1/include/CMakeFiles/B1.dir
+/home/onurkarakas42/SW/G4/example_trashyard/B1/include/CMakeFiles/exampleB1.dir
