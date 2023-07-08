@@ -128,13 +128,15 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 	Py = sintheta*std::sin(phi);
 	Pz = costheta;
 	G4double phi2 = G4UniformRand() * 360.0 * deg;
-        G4double radius = 2*m; // Radius of the circular volume
+	G4double costheta2 = 1. - 2*G4UniformRand(); //1 ile -1 arasında yani cos(0) ile cos(pi) arasında
+	G4double sintheta2 = std::sqrt(1. - costheta2*costheta2); //
+        G4double radius = 0.2*m; // Radius of the circular volume
         //G4double phi = G4UniformRand() * 360.0 * deg; // Random angle
         //G4double r = std::sqrt(G4UniformRand()) * radius;
         G4double r = G4UniformRand() * radius;
-        G4double x = r * std::cos(phi2);
-        G4double y = r * std::sin(phi2);
-        G4double z = 0*m; // Position along the z-axis
+        G4double x = r * sintheta2 * std::cos(phi2);
+        G4double y = r * sintheta2 * std::sin(phi2);
+        G4double z = r * costheta2; // Position along the z-axis
         fParticleGun->SetParticleMomentumDirection(G4ThreeVector(Px,Py,Pz));
 
         fParticleGun->SetParticlePosition(G4ThreeVector(x, y, z));

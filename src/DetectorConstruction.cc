@@ -72,8 +72,8 @@ namespace B1
 G4VPhysicalVolume* DetectorConstruction::Construct()
 {	
   //varsayılan birim metredir
-  G4double h1 = 1.0*m;
-  G4double h2 = 1.47*m;
+  G4double h1 = 1.31*m;
+  G4double h2 = 1.50*m;
   G4double R = 0.5*m;
   G4double d =5.0*m;
   //G4cout<< h1 <<G4endl;
@@ -83,7 +83,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
   // Envelope parameters
   //
-  G4double env_sizeZ = 5*(h1 + d + h2), env_sizeY = (8*R), env_sizeX = (8*R);
+  G4double env_sizeZ = 2*(h1 + d + h2), env_sizeY = (2*R), env_sizeX = (6.45*R);
   G4Material* env_mat = nist->FindOrBuildMaterial("G4_Galactic");
 
   // Option to switch on/off checking of volumes overlaps
@@ -98,7 +98,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   G4Material* world_mat = nist->FindOrBuildMaterial("G4_Galactic");
 
   auto solidWorld = new G4Box("World",                           // its name
-    3*env_sizeX, 3*env_sizeY, 3*env_sizeZ);  // its size
+    2.5*env_sizeX, 2.5*env_sizeY, 1*env_sizeZ);  // its size
 
   auto logicWorld = new G4LogicalVolume(solidWorld,  // its solid
     world_mat,                                       // its material
@@ -117,7 +117,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   // Envelope
   //
   auto solidEnv = new G4Box("Envelope",                    // its name
-    1 * env_sizeX, 1 * env_sizeY,  1*env_sizeZ);  // its size
+    2 * env_sizeX, 2 * env_sizeY,  1*env_sizeZ);  // its size
 
   auto logicEnv = new G4LogicalVolume(solidEnv,  // its solid
     env_mat,                                     // its material
@@ -199,7 +199,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 // ok
   
   G4Material* scintillator = nist->FindOrBuildMaterial("G4_PLASTIC_SC_VINYLTOLUENE");
-  G4ThreeVector pos3 = G4ThreeVector(0*m, 0*m, 4*d);
+  G4ThreeVector pos3 = G4ThreeVector(0*m, 0*m, d);
   //G4ThreeVector pos4 = G4ThreeVector(0*m, 0*m, -d/2);
   
   
@@ -245,7 +245,7 @@ auto logicShape4 = new G4LogicalVolume(tubeSolid2,  // its solid
     scintillator,                                        // its material
     "LVDet2");     
     
-  G4int detnumber = 10;
+  G4int detnumber = 1;
   for(G4int icount = 0; icount < detnumber; icount++)
   {
     
@@ -267,6 +267,14 @@ auto logicShape4 = new G4LogicalVolume(tubeSolid2,  // its solid
       icount,                        // copy number
       checkOverlaps);           // overlaps checking
       
+      
+      
+      G4String trackerChamberSD2name = "/TrackerSD2_copy_no_" + std::to_string(icount);
+      auto aTrackerSD2 = new TrackerSD(trackerChamberSD2name, "DetCollection2");
+      G4SDManager::GetSDMpointer()->AddNewDetector(aTrackerSD2);
+      SetSensitiveDetector(logicShape4->GetName(), aTrackerSD2, true);
+     
+      
       }
 
   fScoringVolume = logicShape4;
@@ -275,12 +283,12 @@ auto logicShape4 = new G4LogicalVolume(tubeSolid2,  // its solid
   //Bu vücudu parçacıklar cidden çembersel bir şekilde çıkıyor mu anlamak için koyuyorum sınırlardan taşıyorlarsa demek ki bir terslik var.
   G4double innerRadius = 0.0*m; // Inner radius of the circle
 
-  G4double outerRadius = 2*m; // Outer radius of the circle
+  G4double outerRadius = 0.2*m; // Outer radius of the circle
   G4double height = 1.0*mm; // Height of the cylinder
-  G4double startAngle = 0.0; // Start angle of the circle
-  G4double spanningAngle = 360.0; // Spanning angle of the circle
+  G4double startAngle = 0.0 * deg; // Start angle of the circle
+  G4double spanningAngle = 360.0*deg; // Spanning angle of the circle
 
-  G4Tubs* gunVolume = new G4Tubs("GunVolume", innerRadius, outerRadius, height, startAngle, spanningAngle);
+  G4Sphere* gunVolume = new G4Sphere("GunVolume", innerRadius, outerRadius, 0, 2 * M_PI, 0, M_PI);
 
   // Create logical volume
   G4LogicalVolume* gunLogical = new G4LogicalVolume(gunVolume, world_mat,"GunLogical");
@@ -305,10 +313,12 @@ void DetectorConstruction::ConstructSDandField()
 
   // Sensitive detectors
 
+  /*
   G4String trackerChamberSD2name = "/TrackerSD2";
   auto aTrackerSD2 = new TrackerSD(trackerChamberSD2name, "DetCollection2");
   G4SDManager::GetSDMpointer()->AddNewDetector(aTrackerSD2);
   SetSensitiveDetector("LVDet2", aTrackerSD2, true);
+  */
   
   G4String trackerChamberSD1name = "/TrackerSD1";
   auto aTrackerSD1 = new TrackerSD(trackerChamberSD1name, "DetCollection1");

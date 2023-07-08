@@ -67,12 +67,14 @@ class TrackerHit : public G4VHit
     void SetTrackID  (G4int track)      { fTrackID = track; };
     void SetChamberNb(G4int chamb)      { fChamberNb = chamb; };
     void SetEdep     (G4double de)      { fEdep = de; };
+    void SetCopyNumber(G4int no)        { fCopyNumber = no; };   
     void SetPos      (G4ThreeVector xyz){ fPos = xyz; };
 
     // Get methods
     G4int GetTrackID() const     { return fTrackID; };
     G4int GetChamberNb() const   { return fChamberNb; };
     G4double GetEdep() const     { return fEdep; };
+    G4int GetCopyNumber() const  { return fCopyNumber; };
     G4ThreeVector GetPos() const { return fPos; };
 
   private:
@@ -80,6 +82,7 @@ class TrackerHit : public G4VHit
     G4int         fChamberNb = -1;
     G4double      fEdep = 0.;
     G4ThreeVector fPos;
+    G4int         fCopyNumber = -1;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

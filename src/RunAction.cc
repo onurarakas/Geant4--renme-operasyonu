@@ -59,6 +59,7 @@ RunAction::RunAction()
   analysisManager->CreateNtupleDColumn("Energy");
   analysisManager->CreateNtupleDColumn("NofHits");
   analysisManager->CreateNtupleDColumn("ChamberNo");
+  analysisManager->CreateNtupleDColumn("CopyNo");
   analysisManager->FinishNtuple(0);
   
   // add new units for dose

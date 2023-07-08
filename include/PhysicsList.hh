@@ -32,6 +32,7 @@
 #define B3PhysicsList_h 1
 
 #include "G4VModularPhysicsList.hh"
+#include "G4Scintillation.hh"
 
 namespace B3
 {

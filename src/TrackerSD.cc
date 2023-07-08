@@ -101,22 +101,39 @@ void TrackerSD::EndOfEvent(G4HCofThisEvent*)
   G4int nofHits = fHitsCollection->entries();
   G4double deposition = 0;
   G4int chamberno = -1;
+  G4int copynumber = -1;
   
   for( G4int jcount = 0; jcount < nofHits; jcount++)
   {
     deposition += (*fHitsCollection)[jcount]->GetEdep();
-    G4int newchamberno = (*fHitsCollection)[jcount]->GetChamberNb();
+    G4cout << "deposition:" << deposition << G4endl;
+    G4int chamberno = (*fHitsCollection)[jcount]->GetChamberNb(); //bu önceden newchamberno idi
+    /*
     if(newchamberno != chamberno && chamberno >-1) 
+    {
     	G4cout << jcount << " chamberno: " << chamberno << "->" << newchamberno << G4endl;
     chamberno = newchamberno;
+    }
+    */
     
+    G4int newcopynumber = (*fHitsCollection)[jcount]->GetCopyNumber(); //bu önceden newcopynumber idi
+    /*
+    if(newcopynumber != copynumber && copynumber >-1) 
+    {
+    G4cout << jcount << " chamberno: " << chamberno << "->" << newchamberno << G4endl;
+    copynumber = newcopynumber;
+    }
+    */
+      
   }
-  if(deposition != 0)
+  
+  if(deposition != 0.)
   {
-  analysisManager->FillNtupleDColumn(0, 0, deposition);
-  analysisManager->FillNtupleDColumn(0, 1, nofHits);
-  analysisManager->FillNtupleDColumn(0, 2, chamberno);
-  analysisManager->AddNtupleRow(0);
+    analysisManager->FillNtupleDColumn(0, 0, deposition);
+    analysisManager->FillNtupleDColumn(0, 1, nofHits);
+    analysisManager->FillNtupleDColumn(0, 2, chamberno);
+    analysisManager->FillNtupleDColumn(0, 3, copynumber);
+    analysisManager->AddNtupleRow(0);
   }
 
   
