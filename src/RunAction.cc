@@ -40,6 +40,7 @@
 #include "G4LogicalVolume.hh"
 #include "G4UnitsTable.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4RootAnalysisManager.hh"
 
 namespace B1
 {
@@ -89,6 +90,10 @@ void RunAction::BeginOfRunAction(const G4Run*)
   auto analysisManager = G4AnalysisManager::Instance();
 
   analysisManager -> OpenFile("deneme.root");
+  
+/*analysisManager ->CreateH1("SD1","SD1",100,0,100);
+  
+  analysisManager ->CreateH1("SD2","SD2",100,0,100);*/
 
   
   // inform the runManager to save random number seed
@@ -143,6 +148,24 @@ void RunAction::EndOfRunAction(const G4Run* run)
     G4double particleEnergy = particleGun->GetParticleEnergy();
     runCondition += G4BestUnit(particleEnergy,"Energy");
   }
+  
+    
+    
+    
+    
+    /*if(chamberno == 1)
+    {
+      analysisManager->FillH1(SD1, deposition);
+    }
+    
+    else if(chamberno == 2)
+    {
+      analysisManager->FillH1(SD1, deposition);
+    }*/
+
+  
+  
+  
 
   // Print
   //

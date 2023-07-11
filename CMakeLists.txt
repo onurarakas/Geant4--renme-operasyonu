@@ -29,11 +29,29 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 
+
+#----------------------------------------------------------------------------
+# Find ROOT package and include directories
+#
+find_package(ROOT REQUIRED COMPONENTS Core RIO Hist)
+include(${ROOT_USE_FILE})
+
+
+
+# Locate sources and headers for this project
+# NB: headers are included so they will show up in IDEs
+#
+file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
+file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
+
+
+
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
-#
+
+
 add_executable(exampleB1 exampleB1.cc ${sources} ${headers})
-target_link_libraries(exampleB1 ${Geant4_LIBRARIES})
+target_link_libraries(exampleB1 ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we

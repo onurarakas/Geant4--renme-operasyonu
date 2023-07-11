@@ -34,6 +34,15 @@
 #include "G4SDManager.hh"
 #include "G4ios.hh"
 #include "G4AnalysisManager.hh"
+#include "G4RootAnalysisManager.hh"
+
+
+//#include "TStyle.h"
+//#include "TCanvas.h"
+//#include "TH1F.h"
+//#include "TFile.h"
+//#include "TLegend.h"
+//#include "TGraph.h"
 
 namespace B1
 {
@@ -68,7 +77,19 @@ void TrackerSD::Initialize(G4HCofThisEvent* hce)
 
 G4bool TrackerSD::ProcessHits(G4Step* aStep,
                                      G4TouchableHistory*)
-{
+{  
+
+  /*TCanvas* c1 = new TCanvas("c1", "Sensitive Detectors", 800, 600);
+   
+  c1->Divide(2, 1);
+   
+  h1->SetFillColorAlpha(kRed, 0.04);
+  c1->cd(1);
+  h2->Draw();
+  c1->cd(2);
+  h1->Draw();
+  */
+  
   // energy deposit
   G4double edep = aStep->GetTotalEnergyDeposit();
 
@@ -81,6 +102,12 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
   G4int copyno=-1;
   if(collectionName[0] == "DetCollection1") number=1;
   if(collectionName[0] == "DetCollection2") number=0;
+  
+  auto analysisManager = G4AnalysisManager::Instance();
+    
+  analysisManager->CreateH1("1","SD1",100,0,100);
+  
+  analysisManager->CreateH1("2","SD2",100,0,100);
   
   copyno = aStep->GetPreStepPoint()->GetTouchableHandle()->GetCopyNumber();
 
@@ -103,9 +130,19 @@ void TrackerSD::EndOfEvent(G4HCofThisEvent*)
   auto analysisManager = G4AnalysisManager::Instance();
   
   
+  // Create a canvas to display the histograms
+  TCanvas* canvas = new TCanvas("canvas", "Energy Deposition", 800, 600);
+
+  // Divide the canvas into two parts for the histograms
+  canvas->Divide(1, 2);
   
+  TH1F* hist1 = new TH1F("hist1", "Energy Deposition - SD1", 100, 0, 100);
+  TH1F* hist2 = new TH1F("hist2", "Energy Deposition - SD2", 100, 0, 100);
+  
+
   G4int nofHits = fHitsCollection->entries();
   G4double deposition = 0;
+  G4double edepo = 0;
   G4int chamberno = -1;
   G4int copynumber = -1;
   
@@ -140,7 +177,51 @@ void TrackerSD::EndOfEvent(G4HCofThisEvent*)
     analysisManager->FillNtupleDColumn(0, 2, chamberno);
     analysisManager->FillNtupleDColumn(0, 3, copynumber);
     analysisManager->AddNtupleRow(0);
+
+
+    if(chamberno == 1)
+    {
+      //analysisManager->FillH1(1, deposition);
+      
+      hist1->Fill(deposition);
+      
+    }
+    
+    else if(chamberno == 2)
+    {
+      hist2->Fill(deposition);
+    }
+    
   }
+  
+  
+  // Set the histogram titles and axis labels
+  hist1->SetTitle("Sensitive Detector 1");
+  hist1->GetXaxis()->SetTitle("Energy Deposition");
+  hist1->GetYaxis()->SetTitle("Entries");
+
+  hist2->SetTitle("Sensitive Detector 2");
+  hist2->GetXaxis()->SetTitle("Energy Deposition");
+  hist2->GetYaxis()->SetTitle("Entries");
+
+  // Draw the histograms
+  canvas->cd(1);
+  hist1->Draw();
+  canvas->Update();
+
+  canvas->cd(2);
+  hist2->Draw();
+  canvas->Update();
+
+  // Save the canvas to a ROOT file
+  canvas->SaveAs("energy_deposition.root");
+
+  // Clean up memory
+  delete hist1;
+  delete hist2;
+  delete canvas;
+  //analysisManager->Write();
+  //analysisManager->CloseFile();
 
   
   //G4ThreeVector position = (*fHitsCollection)->GetPos();

@@ -7,6 +7,12 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/home/onurkarakas42/SW/CernRoot/install/cmake/ROOTConfig-targets-release.cmake"
+  "/home/onurkarakas42/SW/CernRoot/install/cmake/ROOTConfig-targets.cmake"
+  "/home/onurkarakas42/SW/CernRoot/install/cmake/ROOTConfig-version.cmake"
+  "/home/onurkarakas42/SW/CernRoot/install/cmake/ROOTConfig.cmake"
+  "/home/onurkarakas42/SW/CernRoot/install/cmake/ROOTUseFile.cmake"
+  "/home/onurkarakas42/SW/CernRoot/install/cmake/RootMacros.cmake"
   "../CMakeLists.txt"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"

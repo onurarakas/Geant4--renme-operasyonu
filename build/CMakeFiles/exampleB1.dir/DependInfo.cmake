@@ -39,6 +39,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
+  "/home/onurkarakas42/SW/CernRoot/install/include"
   "/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtCore"
