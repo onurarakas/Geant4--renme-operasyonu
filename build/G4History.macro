@@ -64,5 +64,3 @@
 /vis/viewer/refresh
 /vis/verbose warnings
 /run/beamOn 10000
-/analysis/h1/getVector
-/analysis/h2/getVector

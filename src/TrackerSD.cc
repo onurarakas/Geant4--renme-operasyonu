@@ -47,6 +47,7 @@ TrackerSD::TrackerSD(const G4String& name,
   collectionName.insert(hitsCollectionName);
 }
 
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void TrackerSD::Initialize(G4HCofThisEvent* hce)
@@ -77,10 +78,15 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
 
   newHit->SetTrackID  (aStep->GetTrack()->GetTrackID());
   G4int number=-1;
+  G4int copyno=-1;
   if(collectionName[0] == "DetCollection1") number=1;
   if(collectionName[0] == "DetCollection2") number=0;
+  
+  copyno = aStep->GetPreStepPoint()->GetTouchableHandle()->GetCopyNumber();
+
   newHit->SetChamberNb(number);
   newHit->SetEdep(edep);
+  newHit->SetCopyNumber(copyno);
   newHit->SetPos (aStep->GetPostStepPoint()->GetPosition());
 
   fHitsCollection->insert( newHit );
@@ -107,23 +113,23 @@ void TrackerSD::EndOfEvent(G4HCofThisEvent*)
   {
     deposition += (*fHitsCollection)[jcount]->GetEdep();
     G4cout << "deposition:" << deposition << G4endl;
-    G4int chamberno = (*fHitsCollection)[jcount]->GetChamberNb(); //bu önceden newchamberno idi
-    /*
+    G4int newchamberno = (*fHitsCollection)[jcount]->GetChamberNb(); //bu önceden newchamberno idi
+    
     if(newchamberno != chamberno && chamberno >-1) 
     {
     	G4cout << jcount << " chamberno: " << chamberno << "->" << newchamberno << G4endl;
-    chamberno = newchamberno;
+    
     }
-    */
+    chamberno = newchamberno;
     
     G4int newcopynumber = (*fHitsCollection)[jcount]->GetCopyNumber(); //bu önceden newcopynumber idi
-    /*
+    
     if(newcopynumber != copynumber && copynumber >-1) 
     {
     G4cout << jcount << " chamberno: " << chamberno << "->" << newchamberno << G4endl;
-    copynumber = newcopynumber;
+
     }
-    */
+    copynumber = newcopynumber;
       
   }
   

@@ -199,7 +199,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 // ok
   
   G4Material* scintillator = nist->FindOrBuildMaterial("G4_PLASTIC_SC_VINYLTOLUENE");
-  G4ThreeVector pos3 = G4ThreeVector(0*m, 0*m, d);
+  G4ThreeVector pos3 = G4ThreeVector(0*m, 0*m, d/2);
   //G4ThreeVector pos4 = G4ThreeVector(0*m, 0*m, -d/2);
   
   
@@ -245,11 +245,11 @@ auto logicShape4 = new G4LogicalVolume(tubeSolid2,  // its solid
     scintillator,                                        // its material
     "LVDet2");     
     
-  G4int detnumber = 1;
+  G4int detnumber = 3;
   for(G4int icount = 0; icount < detnumber; icount++)
   {
     
-    G4ThreeVector pos4 = G4ThreeVector(d*std::cos((2 * 3.1415/detnumber) * icount) , 0*m, d*std::sin((2 * 3.1415/detnumber) * icount) );
+    G4ThreeVector pos4 = G4ThreeVector(0.8*d*std::cos((2 * 3.1415/detnumber) * icount) , 0*m, 0.8*d*std::sin((2 * 3.1415/detnumber) * icount) );
     
     G4RotationMatrix* rotationMatrix = new G4RotationMatrix();
     
@@ -266,13 +266,6 @@ auto logicShape4 = new G4LogicalVolume(tubeSolid2,  // its solid
       false,                    // no boolean operation
       icount,                        // copy number
       checkOverlaps);           // overlaps checking
-      
-      
-      
-      G4String trackerChamberSD2name = "/TrackerSD2_copy_no_" + std::to_string(icount);
-      auto aTrackerSD2 = new TrackerSD(trackerChamberSD2name, "DetCollection2");
-      G4SDManager::GetSDMpointer()->AddNewDetector(aTrackerSD2);
-      SetSensitiveDetector(logicShape4->GetName(), aTrackerSD2, true);
      
       
       }
@@ -313,12 +306,12 @@ void DetectorConstruction::ConstructSDandField()
 
   // Sensitive detectors
 
-  /*
+  
   G4String trackerChamberSD2name = "/TrackerSD2";
   auto aTrackerSD2 = new TrackerSD(trackerChamberSD2name, "DetCollection2");
   G4SDManager::GetSDMpointer()->AddNewDetector(aTrackerSD2);
   SetSensitiveDetector("LVDet2", aTrackerSD2, true);
-  */
+  
   
   G4String trackerChamberSD1name = "/TrackerSD1";
   auto aTrackerSD1 = new TrackerSD(trackerChamberSD1name, "DetCollection1");
