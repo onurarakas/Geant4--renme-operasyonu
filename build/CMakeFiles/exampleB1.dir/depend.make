@@ -562,17 +562,22 @@ CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4AuxiliaryNavServices.icc
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BlockingList.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BlockingList.icc
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BooleanSolid.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BooleanSolid.icc
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BoundingEnvelope.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Box.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Box.icc
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4CSGSolid.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ClassificationOfNewTrack.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Color.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Colour.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Cons.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Cons.icc
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DCofThisEvent.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DataVector.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DataVector.icc
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DensityEffectCalculator.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DisplacedSolid.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DynamicParticle.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DynamicParticle.icc
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ElectronOccupancy.hh
@@ -597,6 +602,7 @@ CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4GlobalConfig.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4HCofThisEvent.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ICRU90StoppingData.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4IntersectionSolid.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4IonisParamElm.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4IonisParamMat.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Isotope.hh
@@ -693,6 +699,7 @@ CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4SteppingManager.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4String.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4String.icc
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4SubtractionSolid.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4SystemOfUnits.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Threading.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
@@ -711,6 +718,8 @@ CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Transform3D.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Trd.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Trd.icc
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Tubs.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Tubs.icc
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4TwoVector.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Types.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UAdapter.hh
@@ -724,6 +733,8 @@ CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UOrb.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4USphere.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UTrd.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UTubs.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UnionSolid.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UserStackingAction.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UserSteppingAction.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UserTrackingAction.hh
@@ -747,6 +758,8 @@ CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VUserEventInformation.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VUserTrackInformation.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VVolumeMaterialScanner.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VisAttributes.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VisAttributes.icc
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VisExtent.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Visible.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Visible.icc
@@ -764,6 +777,7 @@ CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/geomdefs.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/geomwdefs.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
+CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/graphics_reps_defs.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/pwdefs.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/rundefs.hh
 CMakeFiles/exampleB1.dir/src/DetectorConstruction.cc.o: /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/templates.hh

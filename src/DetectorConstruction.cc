@@ -35,10 +35,16 @@
 #include "G4Cons.hh"
 #include "G4Orb.hh"
 #include "G4Sphere.hh"
+#include "G4Tubs.hh"
 #include "G4Trd.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4VisAttributes.hh"
+#include "G4SubtractionSolid.hh"
+#include "G4UnionSolid.hh"
+#include "G4IntersectionSolid.hh"
+#include "G4VisAttributes.hh"
 
 namespace B1
 {
@@ -52,8 +58,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
   // Envelope parameters
   //
-  G4double env_sizeXY = 20*cm, env_sizeZ = 30*cm;
-  G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
+  G4double env_sizeXY = 1*m, env_sizeZ = 1*m;
+  G4Material* env_mat = nist->FindOrBuildMaterial("G4_Galactic");
 
   // Option to switch on/off checking of volumes overlaps
   //
@@ -64,10 +70,10 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   //
   G4double world_sizeXY = 1.2*env_sizeXY;
   G4double world_sizeZ  = 1.2*env_sizeZ;
-  G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR");
+  G4Material* world_mat = nist->FindOrBuildMaterial("G4_Galactic");
 
   auto solidWorld = new G4Box("World",                           // its name
-    0.5 * world_sizeXY, 0.5 * world_sizeXY, 0.5 * world_sizeZ);  // its size
+    1 * world_sizeXY, 1 * world_sizeXY, 1 * world_sizeZ);  // its size
 
   auto logicWorld = new G4LogicalVolume(solidWorld,  // its solid
     world_mat,                                       // its material
@@ -86,7 +92,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   // Envelope
   //
   auto solidEnv = new G4Box("Envelope",                    // its name
-    0.5 * env_sizeXY, 0.5 * env_sizeXY, 0.5 * env_sizeZ);  // its size
+    1 * env_sizeXY, 1 * env_sizeXY, 1 * env_sizeZ);  // its size
 
   auto logicEnv = new G4LogicalVolume(solidEnv,  // its solid
     env_mat,                                     // its material
@@ -104,7 +110,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   //
   // Shape 1
   //
-  G4Material* shape1_mat = nist->FindOrBuildMaterial("G4_A-150_TISSUE");
+  /*G4Material* shape1_mat = nist->FindOrBuildMaterial("G4_A-150_TISSUE");
   G4ThreeVector pos1 = G4ThreeVector(0, 2*cm, -7*cm);
 
   // Conical section shape
@@ -162,6 +168,37 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   //
   //always return the physical World
   //
+  */
+  
+  // Define dimensions for the outer box
+
+  G4Material* scintillator = nist->FindOrBuildMaterial("G4_PLASTIC_SC_VINYLTOLUENE");
+
+
+  G4VSolid* box = new G4Box("Box", 50*cm, 50*cm, 50*cm);
+
+  G4VSolid* cylinder = new G4Tubs("Cylinder", 0. , 60.*cm, 50.*cm, 0. , 2*M_PI);
+  
+  G4VSolid* uni = new G4IntersectionSolid("Box - Cylinder", box, cylinder, 0, G4ThreeVector(0, 0., 0.));
+  
+  G4LogicalVolume* logic_uni = new G4LogicalVolume(uni, scintillator, "logic_uni");
+  
+  new G4PVPlacement(0,                       //no rotation
+                    G4ThreeVector(0,0,0),         //at (0,0,0)
+                    logic_uni,                //its logical volume
+                    "logic_uni",              //its name
+                    logicEnv,              //its mother  volume
+                    true,                   //no boolean operation
+                    0,                       //copy number
+                    checkOverlaps) ;
+  
+  
+  
+  G4VisAttributes* slabphVisAtt= new G4VisAttributes(G4Colour(1.0,4.0,7.0));
+  logic_uni->SetVisAttributes(slabphVisAtt);
+  
+  
+  
   return physWorld;
 }
 
