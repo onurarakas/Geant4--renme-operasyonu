@@ -31,20 +31,31 @@
 
 #include "G4RunManager.hh"
 #include "G4NistManager.hh"
+#include "G4SDManager.hh"
 #include "G4Box.hh"
 #include "G4Cons.hh"
 #include "G4Orb.hh"
 #include "G4Sphere.hh"
-#include "G4Tubs.hh"
 #include "G4Trd.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4VisAttributes.hh"
-#include "G4SubtractionSolid.hh"
+#include "G4SystemOfUnits.hh"
+
+
+
+//ok
+#include "G4RotationMatrix.hh"
+#include "G4Tubs.hh"
+#include "G4Types.hh"
 #include "G4UnionSolid.hh"
-#include "G4IntersectionSolid.hh"
-#include "G4VisAttributes.hh"
+#include "G4SubtractionSolid.hh"
+
+
+#include <fstream>
+#include <iostream>
+#include <vector>
 
 namespace B1
 {
@@ -55,6 +66,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 {
   // Get nist material manager
   G4NistManager* nist = G4NistManager::Instance();
+   
 
   // Envelope parameters
   //
@@ -64,20 +76,25 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   // Option to switch on/off checking of volumes overlaps
   //
   G4bool checkOverlaps = true;
-
+  
   //
   // World
   //
-  G4double world_sizeXY = 1.2*env_sizeXY;
-  G4double world_sizeZ  = 1.2*env_sizeZ;
+  G4double world_sizeXY = env_sizeXY;
+  G4double world_sizeZ  = env_sizeZ;
   G4Material* world_mat = nist->FindOrBuildMaterial("G4_Galactic");
+  
 
   auto solidWorld = new G4Box("World",                           // its name
-    1 * world_sizeXY, 1 * world_sizeXY, 1 * world_sizeZ);  // its size
+     world_sizeXY,  world_sizeXY,  world_sizeZ);  // its size
 
   auto logicWorld = new G4LogicalVolume(solidWorld,  // its solid
     world_mat,                                       // its material
-    "World");                                        // its name
+    "World");   
+    
+    G4VisAttributes* world_renk = new G4VisAttributes(renk);
+  
+    scint1_renk->SetVisibility(true);                                     // its name
 
   auto physWorld = new G4PVPlacement(nullptr,  // no rotation
     G4ThreeVector(),                           // at (0,0,0)
@@ -88,11 +105,11 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     0,                                         // copy number
     checkOverlaps);                            // overlaps checking
 
-  //
+
   // Envelope
   //
   auto solidEnv = new G4Box("Envelope",                    // its name
-    1 * env_sizeXY, 1 * env_sizeXY, 1 * env_sizeZ);  // its size
+    env_sizeXY, env_sizeXY, env_sizeZ);  // its size
 
   auto logicEnv = new G4LogicalVolume(solidEnv,  // its solid
     env_mat,                                     // its material
@@ -106,12 +123,13 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     false,                    // no boolean operation
     0,                        // copy number
     checkOverlaps);           // overlaps checking
-
+ 
   //
   // Shape 1
   //
-  /*G4Material* shape1_mat = nist->FindOrBuildMaterial("G4_A-150_TISSUE");
-  G4ThreeVector pos1 = G4ThreeVector(0, 2*cm, -7*cm);
+  /*
+  G4Material* shape1_mat = nist->FindOrBuildMaterial("G4_A-150_TISSUE");
+  G4ThreeVector pos11 = G4ThreeVector(0, 2*cm, -7*cm);
 
   // Conical section shape
   G4double shape1_rmina =  0.*cm, shape1_rmaxa = 2.*cm;
@@ -126,7 +144,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     "Shape1");                                         // its name
 
   new G4PVPlacement(nullptr,  // no rotation
-    pos1,                     // at position
+    pos11,                     // at position
     logicShape1,              // its logical volume
     "Shape1",                 // its name
     logicEnv,                 // its mother  volume
@@ -138,7 +156,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   // Shape 2
   //
   G4Material* shape2_mat = nist->FindOrBuildMaterial("G4_BONE_COMPACT_ICRU");
-  G4ThreeVector pos2 = G4ThreeVector(0, -1*cm, 7*cm);
+  G4ThreeVector pos22 = G4ThreeVector(0, -1*cm, 7*cm);
 
   // Trapezoid shape
   G4double shape2_dxa = 12*cm, shape2_dxb = 12*cm;
@@ -153,7 +171,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     "Shape2");                                         // its name
 
   new G4PVPlacement(nullptr,  // no rotation
-    pos2,                     // at position
+    pos22,                     // at position
     logicShape2,              // its logical volume
     "Shape2",                 // its name
     logicEnv,                 // its mother  volume
@@ -168,37 +186,186 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   //
   //always return the physical World
   //
+  
   */
   
-  // Define dimensions for the outer box
-
   G4Material* scintillator = nist->FindOrBuildMaterial("G4_PLASTIC_SC_VINYLTOLUENE");
+  
+  G4Material* mylar = nist->FindOrBuildMaterial("G4_MYLAR");
+  
+  G4Material* Shield_mat = nist->FindOrBuildMaterial("G4_Pb");
+  
+  G4ThreeVector pos1 = G4ThreeVector(0*m, 0*m, 40*cm);
+  G4ThreeVector pos2 = G4ThreeVector(0*m, 0*m, 70*cm);
+  G4ThreeVector pos3 = G4ThreeVector(0*m, 0*m, 100*cm);
+  G4ThreeVector pos_pb = G4ThreeVector(0*m, 0*m, 90 *cm);
+  
+  
+//rotasyon
+  G4RotationMatrix* rotationMatrix = new G4RotationMatrix();
+    
+  rotationMatrix->rotateY(CLHEP::pi/2. );
+  
+  
+  G4int y1 = 20 * mm;
+  
+  G4int y2 = 100 * mm;
+  
+  G4int y3 = 20 * mm; 
+  
+  G4int width = 300 * mm;
+  
+  G4int z = 500 * mm;
+  
+  G4cout << "7" <<G4endl;
+  
+  //1.sint başı
+  
+  G4VSolid* scint1 = new G4Box("det1",  //name
+    y1,
+    width,
+    z); // segment angles
+    
+  //scint 1 için kaplama solid
+    
+  G4VSolid* scint1_kaplama_1 = new G4Box("scint1_kaplama_kalın",  //name
+    y1 + 0.5*mm,
+    width + 0.5*mm,
+    z + 0.5*mm); 
+    
+  G4VSolid* scint1_kaplama_2 = new G4Box("scint1_kaplama_ince",  //name
+    y1,
+    width,
+    z); // segment angles
+    
+  G4VSolid * scint1_kaplama = new G4SubtractionSolid("scint1_kaplama_kalın - scint1_kaplama_ince", scint1_kaplama_1, scint1_kaplama_2);
+  
+  G4cout << "8" <<G4endl;
+  
+  //scint1 kaplamasının logic
+  
+   G4LogicalVolume* logic_scint1_kaplama = new G4LogicalVolume(scint1_kaplama, mylar, "logic_scint1_kaplama");
+   
+   
+  G4Colour renk1(0, 255, 0,125);
 
+  G4VisAttributes* kaplama1_renk = new G4VisAttributes(renk1);
+  
+  kaplama1_renk->SetVisibility(true);
+  
+  logic_scint1_kaplama->SetVisAttributes(kaplama1_renk);
+   
+    new G4PVPlacement(rotationMatrix,  // no rotation
+    pos1,                     // at position
+    logic_scint1_kaplama,              // its logical volume
+    "PVscint1_kaplama",                 // its name
+    logicEnv,                 // its mother  volume
+    false,                    // no boolean operation
+    0,                        // copy number
+    checkOverlaps);
+  
+  //scint1 kaplamasının logic sonu
 
-  G4VSolid* box = new G4Box("Box", 50*cm, 50*cm, 50*cm);
+  
+    
+   G4LogicalVolume* logic_scint1 = new G4LogicalVolume(scint1, scintillator, "logic_scint1");
+   
+    G4Colour renk(255, 0, 0, 125);
 
-  G4VSolid* cylinder = new G4Tubs("Cylinder", 0. , 60.*cm, 50.*cm, 0. , 2*M_PI);
+    G4VisAttributes* scint1_renk = new G4VisAttributes(renk);
   
-  G4VSolid* uni = new G4IntersectionSolid("Box - Cylinder", box, cylinder, 0, G4ThreeVector(0, 0., 0.));
+    scint1_renk->SetVisibility(true);
   
-  G4LogicalVolume* logic_uni = new G4LogicalVolume(uni, scintillator, "logic_uni");
+    logic_scint1->SetVisAttributes(scint1_renk);
+   
+    new G4PVPlacement(rotationMatrix,  // no rotation
+    pos1,                     // at position
+    logic_scint1,              // its logical volume
+    "PVscint1",                 // its name
+    logicEnv,                 // its mother  volume
+    false,                    // no boolean operation
+    0,                        // copy number
+    checkOverlaps);           // overlaps checking
+    
+
+   
+    
+ //1.sint sonu 
+ 
+ 
+ //2.sint başı 
+  G4VSolid* scint2 = new G4Box("det2",  //name
+    y2,
+    width,
+    z); // segment angles
+    
+   G4LogicalVolume* logic_scint2 = new G4LogicalVolume(scint2, scintillator, "logic_scint3");
+   
+     
+    
+    new G4PVPlacement(rotationMatrix,  // no rotation
+    pos2,                     // at position
+    logic_scint2,              // its logical volume
+    "PVscint2",                 // its name
+    logicEnv,                 // its mother  volume
+    false,                    // no boolean operation
+    0,                        // copy number
+    checkOverlaps);           // overlaps checking
+    
+    //2.sint sonu
+    
+    
+    
+    
+    //3.sint başı
+    
+    G4VSolid* scint3 = new G4Box("det3",  //name
+    y3,
+    width,
+    z); // segment angles
+    
+   G4LogicalVolume* logic_scint3 = new G4LogicalVolume(scint3, scintillator, "logic_scint3");
+    
+    new G4PVPlacement(rotationMatrix,  // no rotation
+    pos3,                     // at position
+    logic_scint3,              // its logical volume
+    "PVscint3",                 // its name
+    logicEnv,                 // its mother  volume
+    false,                    // no boolean operation
+    0,                        // copy number
+    checkOverlaps);           // overlaps checking
+    
+ //3.sint sonu
+ 
+ //kurşun plaka başı 
+ 
+    G4VSolid* kursun = new G4Box("kursun",  //name
+    y3,
+    width,
+    z); // segment angles
+    
+   G4LogicalVolume* logic_kursun = new G4LogicalVolume(kursun, Shield_mat, "logic_kursun");
+   
+    G4Colour sa(0.7, 40, 0.1);
+   
+    G4VisAttributes* visAttributes = new G4VisAttributes(sa);
   
-  new G4PVPlacement(0,                       //no rotation
-                    G4ThreeVector(0,0,0),         //at (0,0,0)
-                    logic_uni,                //its logical volume
-                    "logic_uni",              //its name
-                    logicEnv,              //its mother  volume
-                    true,                   //no boolean operation
-                    0,                       //copy number
-                    checkOverlaps) ;
+    visAttributes->SetVisibility(true);
   
-  
-  
-  G4VisAttributes* slabphVisAtt= new G4VisAttributes(G4Colour(1.0,4.0,7.0));
-  logic_uni->SetVisAttributes(slabphVisAtt);
-  
-  
-  
+    logic_kursun->SetVisAttributes(visAttributes);
+     
+     
+    
+    new G4PVPlacement(rotationMatrix,  // no rotation
+    pos_pb,                     // at position
+    logic_kursun,              // its logical volume
+    "PVscint3",                 // its name
+    logicEnv,                 // its mother  volume
+    false,                    // no boolean operation
+    0,                        // copy number
+    checkOverlaps);           // overlaps checking
+ 
+ //son
   return physWorld;
 }
 

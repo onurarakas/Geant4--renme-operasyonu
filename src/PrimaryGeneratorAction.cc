@@ -46,6 +46,18 @@ namespace B1
 
 PrimaryGeneratorAction::PrimaryGeneratorAction()
 {
+  G4double Px;
+  G4double Py;
+  G4double Pz;
+
+  G4double phi = G4UniformRand() * CLHEP::pi*2;
+  G4double costheta = 1. - 2*G4UniformRand(); //1 ile -1 arasında yani cos(0) ile cos(pi) arasında
+  G4double sintheta = std::sqrt(1. - costheta*costheta); // 
+
+  Px = sintheta*std::cos(phi);
+  Py = sintheta*std::sin(phi);
+  Pz = costheta;
+
   G4int n_particle = 1;
   fParticleGun  = new G4ParticleGun(n_particle);
 
@@ -53,12 +65,12 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
   G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
   G4String particleName;
   G4ParticleDefinition* particle
-    = particleTable->FindParticle(particleName="gamma");
+    = particleTable->FindParticle(particleName="mu-");
   fParticleGun->SetParticleDefinition(particle);
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
-  fParticleGun->SetParticleEnergy(6.*MeV);
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(Px,Py,Pz));
+  fParticleGun->SetParticleEnergy(1.0 *GeV);
+  
 }
-
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 PrimaryGeneratorAction::~PrimaryGeneratorAction()
@@ -104,8 +116,20 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   G4double x0 = size * envSizeXY * (G4UniformRand()-0.5);
   G4double y0 = size * envSizeXY * (G4UniformRand()-0.5);
   G4double z0 = -0.5 * envSizeZ;
+  
 
-  fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
+  G4double phi = G4UniformRand() * CLHEP::pi*2;
+  G4double costheta = 1. - 2*G4UniformRand(); //1 ile -1 arasında yani cos(0) ile cos(pi) arasında
+  G4double sintheta = std::sqrt(1. - costheta*costheta); // 
+
+  G4double Px = sintheta*std::cos(phi);
+  G4double Py = sintheta*std::sin(phi);
+  G4double Pz = costheta;
+
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(Px,Py,Pz));
+  
+
+  fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,-0.6*m));
 
   fParticleGun->GeneratePrimaryVertex(anEvent);
 }
