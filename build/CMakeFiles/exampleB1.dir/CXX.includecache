@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../include/DetectorConstruction.hh
-G4VUserDetectorConstruction.hh
-../include/G4VUserDetectorConstruction.hh
+../include/PrimaryGeneratorAction.hh
+G4VUserPrimaryGeneratorAction.hh
+../include/G4VUserPrimaryGeneratorAction.hh
+G4ParticleGun.hh
+../include/G4ParticleGun.hh
 globals.hh
 ../include/globals.hh
 
@@ -540,20 +542,6 @@ G4BlockingList.icc
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BlockingList.icc
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BooleanSolid.hh
-G4DisplacedSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DisplacedSolid.hh
-G4ThreeVector.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
-G4RotationMatrix.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4RotationMatrix.hh
-G4Transform3D.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Transform3D.hh
-G4BooleanSolid.icc
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BooleanSolid.icc
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BooleanSolid.icc
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BoundingEnvelope.hh
 vector
 -
@@ -590,36 +578,6 @@ G4VSolid.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ClassificationOfNewTrack.hh
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Color.hh
-G4Colour.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Colour.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Colour.hh
-globals.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
-G4ThreeVector.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
-iostream
--
-map
--
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Cons.hh
-G4GeomTypes.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4GeomTypes.hh
-G4UCons.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UCons.hh
-CLHEP/Units/PhysicalConstants.h
--
-G4CSGSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-G4Cons.icc
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Cons.icc
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Cons.icc
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DCofThisEvent.hh
 globals.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
@@ -649,18 +607,6 @@ G4DataVector.icc
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DensityEffectCalculator.hh
 globals.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DisplacedSolid.hh
-G4VSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VSolid.hh
-G4RotationMatrix.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4RotationMatrix.hh
-G4ThreeVector.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
-G4Transform3D.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Transform3D.hh
-G4AffineTransform.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4AffineTransform.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DynamicParticle.hh
 cmath
@@ -796,14 +742,6 @@ sstream
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ExceptionSeverity.hh
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Exp.hh
-G4Types.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Types.hh
-cstdint
--
-limits
--
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ForceCondition.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4GPILSelection.hh
@@ -862,28 +800,6 @@ G4VHitsCollection.hh
 vector
 -
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ICRU90StoppingData.hh
-globals.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
-G4Material.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Material.hh
-G4PhysicsFreeVector.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4PhysicsFreeVector.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4IntersectionSolid.hh
-G4BooleanSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BooleanSolid.hh
-G4VSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VSolid.hh
-G4RotationMatrix.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4RotationMatrix.hh
-G4ThreeVector.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
-G4Transform3D.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Transform3D.hh
-G4AffineTransform.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4AffineTransform.hh
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4IonisParamElm.hh
 G4ios.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ios.hh
@@ -939,6 +855,16 @@ G4LogicalVolume.icc
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4LogicalVolume.icc
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4LogicalVolume.icc
+
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4LogicalVolumeStore.hh
+vector
+-
+map
+-
+G4LogicalVolume.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4LogicalVolume.hh
+G4VStoreNotifier.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VStoreNotifier.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4LorentzVector.hh
 CLHEP/Vector/LorentzVector.h
@@ -1110,44 +1036,6 @@ G4Navigator.icc
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Navigator.icc
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4NistElementBuilder.hh
-vector
--
-CLHEP/Units/PhysicalConstants.h
--
-globals.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
-G4Element.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Element.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4NistManager.hh
-vector
--
-CLHEP/Units/PhysicalConstants.h
--
-globals.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
-G4Material.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Material.hh
-G4NistElementBuilder.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4NistElementBuilder.hh
-G4NistMaterialBuilder.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4NistMaterialBuilder.hh
-G4ICRU90StoppingData.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ICRU90StoppingData.hh
-G4Pow.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Pow.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4NistMaterialBuilder.hh
-vector
--
-CLHEP/Units/PhysicalConstants.h
--
-globals.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
-G4Material.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Material.hh
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4NoProcess.hh
 G4VProcess.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VProcess.hh
@@ -1178,22 +1066,6 @@ G4NormalNavigation.icc
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4NormalNavigation.icc
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Orb.hh
-G4GeomTypes.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4GeomTypes.hh
-G4UOrb.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UOrb.hh
-CLHEP/Units/PhysicalConstants.h
--
-G4CSGSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-G4Orb.icc
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Orb.icc
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Orb.icc
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4OrderedTable.hh
 vector
 -
@@ -1211,12 +1083,6 @@ pwdefs.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/pwdefs.hh
 G4AutoLock.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4AutoLock.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4PVPlacement.hh
-G4VPhysicalVolume.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VPhysicalVolume.hh
-G4Transform3D.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Transform3D.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ParameterisedNavigation.hh
 G4Types.hh
@@ -1275,6 +1141,20 @@ G4ParticleDefinition.icc
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ParticleDefinition.icc
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ParticleDefinition.icc
+
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ParticleGun.hh
+globals.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
+G4VPrimaryGenerator.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VPrimaryGenerator.hh
+G4ThreeVector.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
+G4ParticleDefinition.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ParticleDefinition.hh
+G4PrimaryVertex.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4PrimaryVertex.hh
+G4ParticleMomentum.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ParticleMomentum.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ParticleMomentum.hh
 G4ThreeVector.hh
@@ -1375,16 +1255,6 @@ HepPolyhedron.h
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/HepPolyhedron.h
 G4Visible.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Visible.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Pow.hh
-G4DataVector.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4DataVector.hh
-G4Exp.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Exp.hh
-G4Log.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Log.hh
-globals.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4PrimaryParticle.hh
 globals.hh
@@ -1654,22 +1524,6 @@ G4SmartVoxelProxy.icc
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4SmartVoxelProxy.icc
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Sphere.hh
-G4GeomTypes.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4GeomTypes.hh
-G4USphere.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4USphere.hh
-CLHEP/Units/PhysicalConstants.h
--
-G4CSGSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-G4Sphere.icc
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Sphere.icc
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Sphere.icc
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4StackManager.hh
 G4UserStackingAction.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UserStackingAction.hh
@@ -1811,20 +1665,6 @@ G4String.icc
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4String.icc
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4String.icc
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4SubtractionSolid.hh
-G4BooleanSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BooleanSolid.hh
-G4VSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VSolid.hh
-G4RotationMatrix.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4RotationMatrix.hh
-G4ThreeVector.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
-G4Transform3D.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Transform3D.hh
-G4AffineTransform.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4AffineTransform.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4SystemOfUnits.hh
 CLHEP/Units/SystemOfUnits.h
@@ -1982,36 +1822,6 @@ G4Allocator.hh
 CLHEP/Geometry/Transform3D.h
 -
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Trd.hh
-G4GeomTypes.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4GeomTypes.hh
-G4UTrd.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UTrd.hh
-G4CSGSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-G4Trd.icc
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Trd.icc
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Trd.icc
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Tubs.hh
-G4GeomTypes.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4GeomTypes.hh
-G4UTubs.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UTubs.hh
-CLHEP/Units/PhysicalConstants.h
--
-G4CSGSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-G4Tubs.icc
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Tubs.icc
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Tubs.icc
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4TwoVector.hh
 globals.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
@@ -2060,14 +1870,6 @@ VecGeom/volumes/UnplacedBox.h
 G4Polyhedron.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UCons.hh
-G4UAdapter.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UAdapter.hh
-VecGeom/volumes/UnplacedCone.h
--
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UIcommand.hh
 vector
 -
@@ -2104,52 +1906,6 @@ G4UItokenNum.hh
 globals.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UOrb.hh
-G4UAdapter.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UAdapter.hh
-VecGeom/volumes/UnplacedOrb.h
--
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4USphere.hh
-G4UAdapter.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UAdapter.hh
-VecGeom/volumes/UnplacedSphere.h
--
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UTrd.hh
-G4UAdapter.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UAdapter.hh
-VecGeom/volumes/UnplacedTrd.h
--
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UTubs.hh
-G4UAdapter.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UAdapter.hh
-VecGeom/volumes/UnplacedTube.h
--
-G4Polyhedron.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Polyhedron.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UnionSolid.hh
-G4BooleanSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4BooleanSolid.hh
-G4VSolid.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VSolid.hh
-G4RotationMatrix.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4RotationMatrix.hh
-G4ThreeVector.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
-G4Transform3D.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Transform3D.hh
-G4AffineTransform.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4AffineTransform.hh
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4UserStackingAction.hh
 G4ClassificationOfNewTrack.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ClassificationOfNewTrack.hh
@@ -2183,6 +1939,8 @@ G4Transform3D.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VHitsCollection.hh
 globals.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
+
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VNotifier.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VPVParameterisation.hh
 G4Types.hh
@@ -2227,6 +1985,10 @@ G4VPhysicalVolume.icc
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VPhysicalVolume.icc
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VPhysicalVolume.icc
+
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VPrimaryGenerator.hh
+G4ThreeVector.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VProcess.hh
 cmath
@@ -2286,6 +2048,10 @@ G4GPILSelection.hh
 trkgdefs.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/trkgdefs.hh
 
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VStoreNotifier.hh
+G4VNotifier.hh
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VNotifier.hh
+
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VTouchable.hh
 G4Types.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Types.hh
@@ -2308,13 +2074,9 @@ globals.hh
 G4ThreeVector.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4ThreeVector.hh
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VUserDetectorConstruction.hh
-vector
--
-globals.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VUserEventInformation.hh
+
+/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VUserTrackInformation.hh
 globals.hh
@@ -2323,26 +2085,6 @@ globals.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VVolumeMaterialScanner.hh
 G4Types.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Types.hh
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VisAttributes.hh
-globals.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/globals.hh
-vector
--
-map
--
-graphics_reps_defs.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/graphics_reps_defs.hh
-G4Colour.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Colour.hh
-G4Color.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Color.hh
-CLHEP/Units/SystemOfUnits.h
--
-G4VisAttributes.icc
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VisAttributes.icc
-
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VisAttributes.icc
 
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4VisExtent.hh
 globals.hh
@@ -2522,10 +2264,6 @@ G4Exception.hh
 G4EnvironmentUtils.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4EnvironmentUtils.hh
 
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/graphics_reps_defs.hh
-G4Types.hh
-/home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Types.hh
-
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/pwdefs.hh
 G4Types.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Types.hh
@@ -2552,39 +2290,25 @@ G4Types.hh
 G4Types.hh
 /home/onurkarakas42/SW/G4/geant4-v11.1.1-install/include/Geant4/G4Types.hh
 
-/home/onurkarakas42/SW/G4/muonlifetime/src/DetectorConstruction.cc
-DetectorConstruction.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/DetectorConstruction.hh
-G4RunManager.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4RunManager.hh
-G4NistManager.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4NistManager.hh
-G4Box.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4Box.hh
-G4Cons.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4Cons.hh
-G4Orb.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4Orb.hh
-G4Sphere.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4Sphere.hh
-G4Tubs.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4Tubs.hh
-G4Trd.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4Trd.hh
+/home/onurkarakas42/SW/G4/muonlifetime/src/PrimaryGeneratorAction.cc
+PrimaryGeneratorAction.hh
+/home/onurkarakas42/SW/G4/muonlifetime/src/PrimaryGeneratorAction.hh
+G4LogicalVolumeStore.hh
+/home/onurkarakas42/SW/G4/muonlifetime/src/G4LogicalVolumeStore.hh
 G4LogicalVolume.hh
 /home/onurkarakas42/SW/G4/muonlifetime/src/G4LogicalVolume.hh
-G4PVPlacement.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4PVPlacement.hh
+G4Box.hh
+/home/onurkarakas42/SW/G4/muonlifetime/src/G4Box.hh
+G4RunManager.hh
+/home/onurkarakas42/SW/G4/muonlifetime/src/G4RunManager.hh
+G4ParticleGun.hh
+/home/onurkarakas42/SW/G4/muonlifetime/src/G4ParticleGun.hh
+G4ParticleTable.hh
+/home/onurkarakas42/SW/G4/muonlifetime/src/G4ParticleTable.hh
+G4ParticleDefinition.hh
+/home/onurkarakas42/SW/G4/muonlifetime/src/G4ParticleDefinition.hh
 G4SystemOfUnits.hh
 /home/onurkarakas42/SW/G4/muonlifetime/src/G4SystemOfUnits.hh
-G4VisAttributes.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4VisAttributes.hh
-G4SubtractionSolid.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4SubtractionSolid.hh
-G4UnionSolid.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4UnionSolid.hh
-G4IntersectionSolid.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4IntersectionSolid.hh
-G4VisAttributes.hh
-/home/onurkarakas42/SW/G4/muonlifetime/src/G4VisAttributes.hh
+Randomize.hh
+/home/onurkarakas42/SW/G4/muonlifetime/src/Randomize.hh
 
